@@ -1,3 +1,37 @@
-<!--a href="https://play.google.com/store">GET IT ON Google Play!</a-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<script>
+		function openOrDownloadURL() {
+			var AppURL = "vtruyentranhthapcam://tttc";
+			var DownloadURL = "http://tiodd.com/download";
+			if (navigator.userAgent.match(/Android/)) {
+			if (navigator.userAgent.match(/Chrome/)) {
+					window.location = "intent://myapp/#Intent;scheme=vtruyentranhthapcam;package=com.huli.tttc"
+				} else {
+					 var iframe = document.createElement("iframe");
+					 iframe.style.border = "none";
+					 iframe.style.width = "1px";
+					 iframe.style.height = "1px";
+					 iframe.onload = function() {
+							window.location = DownloadURL;
+					 };
+					 iframe.src = AppURL;
+					 document.body.appendChild(iframe);
+				}
+			} else {
+				// Not Android mobile
+				window.location = DownloadURL;
+			}
+	</script>
+</head>
+<body>
 
-<a href="vtruyentranhthapcam://other/parameters/here">
+	<!--a href="vtruyentranhthapcam://other/parameters/here"-->
+
+	<a href="javascript:openOrDownloadURL();">Open App</a>
+
+</body>
+</html>
+
